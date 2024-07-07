@@ -3,15 +3,16 @@ import "../style/addButtonsSection.scss";
 import AddButton from "./AddButton";
 import { useSelector, useDispatch } from "react-redux";
 import SubtractButton from "./SubtractButton";
-import { initialState } from "../counterSlice";
-import { clear } from "../counterSlice";
+import { clear, save } from "../counterSlice";
 
 const AddButtonsSection = () => {
   const state = useSelector((state) => state.counter);
   const dispatch = useDispatch();
   const quantities = [10, 20, 30, 40, 50];
 
-  const saveBtnHandler = () => {};
+  const saveBtnHandler = () => {
+    dispatch(save());
+  };
 
   const clearBtnHandler = () => {
     dispatch(clear());
