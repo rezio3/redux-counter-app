@@ -1,0 +1,44 @@
+@mixin common-button($font) {
+  padding: 10px 30px;
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 10px;
+  font-size: $font;
+  transition: 0.2s;
+  cursor: pointer;
+}
+$common-button-hover-color: rgb(232, 217, 195);
+.all-buttons-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  .add-buttons-container {
+    padding: 20px;
+    width: 70%;
+    min-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    .add-button {
+      @include common-button(22px);
+    }
+    .add-button:hover {
+      background-color: $common-button-hover-color;
+    }
+  }
+}
+.total {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.lower-buttons-container {
+  display: flex;
+  gap: 20px;
+  .lower-button {
+    @include common-button(16px);
+  }
+  .lower-button:hover {
+    background-color: $common-button-hover-color;
+  }
+}
